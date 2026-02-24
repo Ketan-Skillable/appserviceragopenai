@@ -5,7 +5,7 @@ param location string = resourceGroup().location
 param environmentName string
 
 @description('Unique suffix for naming resources')
-param resourceToken string = uniqueString(resourceGroup().id, environmentName)
+param resourceToken string = resourceGroup().tags.LabInstance
 
 @description('Tags that will be applied to all resources')
 param tags object = {
